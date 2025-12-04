@@ -1610,10 +1610,15 @@ textarea.form-control {
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.footer-license {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
 }
 
 /* Responsive Design */

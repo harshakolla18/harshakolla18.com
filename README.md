@@ -1,6 +1,6 @@
-# Lokesh Boddapu – Portfolio
+# Reddy Harsha Vardhan – Portfolio
 
-Live site: https://boddapulokesh.github.io/portfolio
+Live site: https://harshakolla18.com/portfolio
 
 ## Overview
 A clean, responsive personal portfolio for showcasing experience, projects, and skills. It’s a static site built with HTML, CSS, and vanilla JavaScript—optimized for smooth navigation, accessibility, and quick deployment (e.g., GitHub Pages).
@@ -25,8 +25,8 @@ A clean, responsive personal portfolio for showcasing experience, projects, and 
 ├── index.html          # Main page markup
 ├── style.css           # Styles (design tokens + sections)
 ├── app.js              # Interactions (nav, scroll, forms, effects)
-├── LokeshBoddapu.jpg   # Profile image
-├── Lokesh-Boddapu-Resume.pdf  # Downloadable resume
+├── harsha-kolla.jpg   # Profile image
+├── harsha'sresume.pdf  # Downloadable resume
 └── .gitignore
 ```
 
@@ -50,8 +50,8 @@ python3 -m http.server 8000
 
 ## Customize
 - Content: edit section text and links in `index.html` (name, roles, experience, projects, contact links)
-- Resume: replace `Lokesh Boddapu - Resume.pdf` and update links if you rename it
-- Images: swap `LokeshBoddapu.jpg` with your photo (keep the same filename or update the `<img>` src)
+- Resume: replace `harsha'sresume.pdf` and update links if you rename it
+- Images: swap `harsha-kolla.jpg` with your photo (keep the same filename or update the `<img>` src)
 - Colors and design: adjust CSS variables in `style.css` (see `:root` tokens)
 - Sections:
   - Skills and Achievements have an optional horizontal-on-vertical scroll effect (controlled by classes `skills--hscroll` and `achievements--hscroll`)
@@ -68,9 +68,11 @@ python3 -m http.server 8000
 - Add social preview tags (Open Graph/Twitter) if you want rich link sharing
 
 ## License
-Copyright (c) 2025 Lokesh Boddapu. All rights reserved.
+Copyright (c) 2025 Reddy Harsha Vardhan. All rights reserved.
 
 ## Contact
-- Email: lokeshboddapu1234@gmail.com
-- LinkedIn: https://linkedin.com/in/lokeshboddapu
-- GitHub: https://github.com/BoddapuLokesh
+- Email: harsha.r@mymailshub.com
+- Phone: +1 314-815-7539
+- LinkedIn: https://linkedin.com
+- GitHub: https://github.com/harshakolla18
+- Portfolio: https://harshakolla18.com
