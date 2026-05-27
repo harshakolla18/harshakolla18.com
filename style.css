@@ -1359,6 +1359,19 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+.exp-environment {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(139,115,85,0.3);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-light, #5a6470);
+}
+
+.exp-environment strong {
+  color: var(--accent-warm);
+}
+
 /* Hover micro-interaction (no zoom) */
 .experience-timeline .timeline-content:hover {
   border-color: rgba(139,115,85,0.35);

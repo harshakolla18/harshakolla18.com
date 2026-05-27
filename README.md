@@ -1,4 +1,4 @@
-# Reddy Harsha Vardhan – Portfolio
+# Harsha Vardhan Reddy – Portfolio
 
 Live site: https://harshakolla18.com/portfolio
 
@@ -25,8 +25,8 @@ A clean, responsive personal portfolio for showcasing experience, projects, and 
 ├── index.html          # Main page markup
 ├── style.css           # Styles (design tokens + sections)
 ├── app.js              # Interactions (nav, scroll, forms, effects)
-├── harsha-kolla.jpg   # Profile image
-├── harsha'sresume.pdf  # Downloadable resume
+├── harsha-kolla-optimized.jpg          # Profile image
+├── Harsha-Vardhan-Reddy-Resume.docx    # Downloadable resume
 └── .gitignore
 ```
 
@@ -50,7 +50,7 @@ python3 -m http.server 8000
 
 ## Customize
 - Content: edit section text and links in `index.html` (name, roles, experience, projects, contact links)
-- Resume: replace `harsha'sresume.pdf` and update links if you rename it
+- Resume: replace `Harsha-Vardhan-Reddy-Resume.docx` and update links if you rename it
 - Images: swap `harsha-kolla.jpg` with your photo (keep the same filename or update the `<img>` src)
 - Colors and design: adjust CSS variables in `style.css` (see `:root` tokens)
 - Sections:
@@ -68,11 +68,11 @@ python3 -m http.server 8000
 - Add social preview tags (Open Graph/Twitter) if you want rich link sharing
 
 ## License
-Copyright (c) 2025 Reddy Harsha Vardhan. All rights reserved.
+Copyright (c) 2025 Harsha Vardhan Reddy. All rights reserved.
 
 ## Contact
-- Email: harsha.r@mymailshub.com
-- Phone: +1 314-815-7539
-- LinkedIn: https://linkedin.com
+- Email: harshavardhankolla3060@gmail.com
+- Phone: +1 (314) 433-5381
+- LinkedIn: https://www.linkedin.com/in/harsha-kolla-357a211a8/
 - GitHub: https://github.com/harshakolla18
 - Portfolio: https://harshakolla18.com
