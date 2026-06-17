@@ -200,30 +200,31 @@
                                 reducing per-inference compute cost by 42% and cutting infrastructure spend $180K
                                 annually.</li>
                             <li>Developed RAG pipelines using LangChain and GPT-4o over internal policy and operations
-                                documents with hybrid vector search and reranking, and fine-tuned open-source LLMs
+                                documents, with hybrid vector search and reranking, and fine-tuned open-source LLMs
                                 (Llama, Mistral) using LoRA/QLoRA with PEFT and Hugging Face Transformers, lifting answer
                                 relevance ~25% and reducing hallucinations on domain queries.</li>
                             <li>Built high-throughput async inference APIs using FastAPI with request batching and
                                 connection pooling, reducing per-request overhead by 55% while handling 8,000 concurrent
-                                prediction requests through AWS API Gateway with rate limiting and circuit breakers.</li>
-                            <li>Built a unified MLOps observability stack correlating business KPIs with model
-                                performance signals, cutting mean time to detect model degradation from 4 days to 38
-                                minutes across six services.</li>
-                            <li>Architected a GitOps-driven deployment framework using ArgoCD and Helm with automated
-                                canary deployments validated against shadow-traffic baselines, reducing model-to-production
-                                time from five days to under four hours and preventing two critical regressions.</li>
-                            <li>Built a production monitoring system using Evidently-AI that detected distribution shift
-                                across twelve deployed classification models and auto-triggered retraining when
-                                Wasserstein distance crossed a two-sigma threshold, recovering 43% accuracy loss within
-                                two hours.</li>
-                            <li>Enforced zero-trust security across all ML inference endpoints with attribute-based access
-                                control, automated secret rotation via AWS Secrets Manager, and tamper-evident audit
-                                logging.</li>
+                                prediction requests through AWS API Gateway with rate limiting and circuit breakers
+                                protecting downstream model endpoints.</li>
+                            <li>Built a unified MLOps observability stack correlating business KPIs with model performance
+                                signals, linking prediction confidence drops directly to revenue-impact dashboards and
+                                cutting mean time to detect model degradation from 4 days to 38 minutes across six
+                                services.</li>
+                            <li>Architected a GitOps-driven deployment framework using ArgoCD and Helm, reducing
+                                model-to-production time from five days to under four hours, with automated canary
+                                deployments that validated new model versions against shadow-traffic baselines before full
+                                rollout, preventing two critical performance regressions in production.</li>
+                            <li>Built a production monitoring system using Evidently-AI that detected statistical
+                                distribution shift in real time across twelve deployed classification models and
+                                automatically triggered retraining when Wasserstein distance crossed a two-sigma
+                                threshold, recovering 43% accuracy loss within two hours and preventing $72K in downstream
+                                compliance violations.</li>
+                            <li>Enforced zero-trust security architecture across all ML inference endpoints, implementing
+                                attribute-based access control, automated secret rotation via AWS Secrets Manager, and
+                                tamper-evident audit logging, reducing an attack surface that previously exposed three
+                                high-severity vulnerabilities flagged in the annual pen test.</li>
                         </ul>
-                        <p class="exp-environment"><strong>Environment:</strong> Python, AWS (EKS, API Gateway, Secrets
-                            Manager, Inspector, ECR), scikit-learn, XGBoost, PyTorch, LangChain, GPT-4o, Hugging Face
-                            Transformers, LoRA/QLoRA, PEFT, FastAPI, Docker, Kubernetes, KEDA, ArgoCD, Helm, MLflow,
-                            Evidently-AI.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -235,32 +236,34 @@
                             <li>Built and deployed an AI-powered threat intelligence platform (Secure Recon) on AWS,
                                 integrating ML classification models (XGBoost, Random Forest, logistic regression) for
                                 real-time threat scoring and anomaly detection across high-volume security feeds, scoring
-                                1M+ events/day at ~92% precision.</li>
+                                1M+ events/day and surfacing high-risk threats with ~92% precision.</li>
                             <li>Designed a low-latency threat scoring microservice processing 11,500 security events per
-                                second with sub-80ms p99 latency, using model ensembling to reduce false-positive
-                                escalations from 23% to 4% and saving analysts 31 hours of manual triage weekly.</li>
+                                second with sub-80ms p99 latency, using model ensembling across XGBoost and Random Forest
+                                to reduce false-positive escalations from 23% to 4%, saving analysts 31 hours of manual
+                                triage weekly.</li>
                             <li>Built an embedding-based semantic search layer over thousands of threat reports using
                                 OpenAI embeddings and vector databases, enabling natural-language queries and
-                                similarity-based clustering, cutting analyst search time ~60%.</li>
+                                similarity-based threat clustering, cutting analyst search time ~60%.</li>
                             <li>Integrated LangChain-powered LLM workflows for automated threat enrichment,
                                 summarization, and report generation from raw intelligence feeds, reducing manual analyst
                                 workload by ~15 hours per week.</li>
                             <li>Developed an ML pipeline orchestration layer in Spring Boot managing the end-to-end model
                                 lifecycle with automated feature versioning, A/B experiment routing, and
-                                challenger-champion deployment of six model variants in production.</li>
+                                challenger-champion deployment, enabling simultaneous evaluation of six model variants in
+                                production without interruption.</li>
                             <li>Built a production model health system using Prometheus alerting rules tied to prediction
-                                confidence and feature drift thresholds, maintaining 99.9% uptime across eight production
-                                threat-scoring endpoints.</li>
-                            <li>Implemented blue-green deployment for ML model updates using weighted traffic shifting on
-                                AWS EKS with automated rollback triggered by real-time F1-score regression, achieving zero
-                                customer-impacting incidents across 40+ models.</li>
+                                confidence and feature drift thresholds, automatically paging on-call engineers when
+                                anomaly scores exceeded baseline by two standard deviations, maintaining 99.9% uptime
+                                across eight production threat-scoring endpoints.</li>
+                            <li>Implemented a blue-green deployment strategy for ML model updates using weighted traffic
+                                shifting on AWS EKS, with automated rollback triggered by real-time F1-score regression
+                                below a defined threshold, achieving zero customer-impacting incidents across 40+
+                                models.</li>
                             <li>Led a cross-functional model review process between data science and security operations
-                                teams, shipping six threat-detection model improvements in three months versus one
-                                previously.</li>
+                                teams, establishing shared performance thresholds and false-positive budgets that aligned
+                                ML iteration cycles with analyst capacity, shipping six threat-detection model
+                                improvements in three months versus one previously.</li>
                         </ul>
-                        <p class="exp-environment"><strong>Environment:</strong> Python, Java, Spring Boot, AWS (EKS),
-                            XGBoost, Random Forest, OpenAI embeddings, vector databases, LangChain, FastAPI, Docker,
-                            Kubernetes, Prometheus, Grafana.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -271,31 +274,36 @@
                         <ul class="responsibilities">
                             <li>Engineered an ML-powered logistics optimization platform on Databricks, building
                                 route-optimization and demand-forecasting models (gradient boosting and LSTM time-series)
-                                that cut forecast error ~20% and saved an estimated $2M annually in logistics costs.</li>
+                                that improved operational decision-making speed and reduced supply chain disruptions,
+                                cutting forecast error ~20% and saving an estimated $2M annually in logistics costs.</li>
                             <li>Delivered an end-to-end retail intelligence platform serving 2,400 merchandising and
                                 fulfillment users, combining real-time LSTM demand forecasting with rule-based inventory
-                                reallocation that reduced stockout events by 31% across Nike's top 200 SKUs.</li>
+                                reallocation logic that reduced stockout events by 31% across Nike's top 200 SKUs during
+                                peak seasonal periods.</li>
                             <li>Created RESTful ML inference APIs using Python and FastAPI, containerized with Docker and
-                                deployed on auto-scaling Databricks clusters, serving 500+ requests/sec at peak.</li>
+                                deployed on Databricks clusters with auto-scaling, supporting low-latency predictions for
+                                merchandising and fulfillment teams and serving 500+ requests/sec at peak.</li>
                             <li>Architected a centralized feature store on Databricks Delta Lake serving 14 downstream ML
-                                models with point-in-time correct retrieval, eliminating training-serving skew that had
-                                caused 12% accuracy degradation and reducing feature duplication by 80%.</li>
-                            <li>Replaced keyword-based product search with an OpenAI embedding layer over 1.2M catalog
-                                entries, improving search-to-purchase conversion by 19% and driving $340K incremental
-                                quarterly revenue.</li>
-                            <li>Hardened the production AI perimeter with column-level PII masking in ML feature
-                                pipelines, service-mesh mTLS between inference microservices, and automated compliance
-                                attestation, passing Nike's internal security audit with zero remediation findings.</li>
-                            <li>Evolved ML deployment from manual notebook pushes to fully automated Databricks Jobs
-                                pipelines with shadow-mode validation and rollback triggers, increasing monthly release
-                                velocity from 2 to 11 while reducing post-deployment incidents by 73%.</li>
+                                models with point-in-time correct feature retrieval, eliminating training-serving skew
+                                that had caused 12% accuracy degradation in production versus offline evaluation, and
+                                reducing feature engineering duplication across teams by 80%.</li>
+                            <li>Replaced keyword-based product search with an OpenAI embedding layer over 1.2M product
+                                catalog entries, improving search-to-purchase conversion by 19% and enabling
+                                cross-category semantic discovery that surfaced relevant products with zero keyword
+                                overlap, directly attributable to $340K incremental quarterly revenue.</li>
+                            <li>Hardened the production AI service perimeter by implementing column-level data masking for
+                                PII in ML feature pipelines, service-mesh mTLS between inference microservices, and
+                                automated compliance attestation reports, passing Nike's internal security audit with zero
+                                remediation findings for the first time in three years.</li>
+                            <li>Evolved ML deployment from manual notebook-based pushes to fully automated Databricks Jobs
+                                pipelines with shadow-mode validation, feature drift checks pre-deployment, and rollback
+                                triggers, increasing monthly model release velocity from 2 to 11 while reducing
+                                post-deployment incidents by 73%.</li>
                             <li>Drove ML product roadmap alignment across merchandising, supply chain, and engineering
-                                stakeholders with performance scorecards tied to business outcomes, securing $1.8M in
-                                platform investment.</li>
+                                stakeholders by establishing model performance scorecards tied to business outcomes,
+                                securing buy-in for three major platform investments totaling $1.8M in infrastructure and
+                                tooling.</li>
                         </ul>
-                        <p class="exp-environment"><strong>Environment:</strong> Python, Databricks, Delta Lake, gradient
-                            boosting, LSTM, OpenAI embeddings, FastAPI, Docker, Kubernetes, MLflow, Prometheus, Grafana.
-                        </p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -304,31 +312,42 @@
                         <h3>Software Engineer – AI</h3>
                         <h4>Infosys, India</h4>
                         <ul class="responsibilities">
-                            <li>Built and deployed ML models for fraud detection and transaction risk scoring (XGBoost,
-                                Random Forest, logistic regression) as real-time scoring services across retail banking
-                                APIs, improving fraud catch rate ~18% while reducing false positives ~25%.</li>
+                            <li>Built and deployed machine learning models for fraud detection and transaction risk
+                                scoring using XGBoost, Random Forest, and logistic regression, deployed as real-time
+                                scoring services into retail banking APIs across account, transaction, and onboarding
+                                workflows, improving fraud catch rate ~18% while reducing false positives ~25%.</li>
                             <li>Built an AI-assisted KYC pipeline combining CNN-based document classification with
-                                NLP-driven entity extraction, automating 78% of manual onboarding review and reducing
-                                onboarding time from 4.2 days to 11 hours at 99.6% compliance accuracy.</li>
-                            <li>Deployed a BERT-based ticket classification system trained on 180K historical cases,
-                                achieving 94% intent recognition accuracy and auto-routing 67% of inbound tickets, cutting
-                                average resolution time from 3.1 days to 14 hours.</li>
-                            <li>Redesigned the ML feature store with partitioned PostgreSQL tables, materialized view
-                                caching, and read-replica routing, cutting feature retrieval latency from 380ms to 52ms
-                                and recovering $2.1M in previously undetected losses.</li>
+                                NLP-driven entity extraction, automating 78% of manual onboarding review steps and
+                                reducing average customer onboarding time from 4.2 days to 11 hours while maintaining
+                                99.6% regulatory compliance accuracy.</li>
+                            <li>Deployed a BERT-based ticket classification system trained on 180K historical support
+                                cases, achieving 94% intent recognition accuracy and auto-routing 67% of inbound tickets
+                                without human review, freeing 8 FTE hours daily and reducing average ticket resolution
+                                time from 3.1 days to 14 hours.</li>
+                            <li>Redesigned the ML feature store architecture with partitioned PostgreSQL tables,
+                                materialized view caching, and read-replica routing, cutting feature retrieval latency
+                                from 380ms to 52ms and enabling same-day deployment of four new fraud signals that
+                                recovered $2.1M in previously undetected losses.</li>
                             <li>Standardized ML service containerization across three banking environments using Docker
-                                multi-stage builds and Databricks Jobs orchestration, achieving a 99.97% uptime SLA.</li>
+                                multi-stage builds and Databricks Jobs orchestration, achieving a 99.97% uptime SLA and
+                                reducing environment-specific deployment failures that previously accounted for 62% of
+                                production incidents.</li>
                             <li>Built a model governance pipeline enforcing bias testing, data lineage validation, and
-                                performance benchmarking as mandatory CI gates, catching four fairness violations before
-                                production.</li>
+                                performance benchmarking as mandatory CI gates before any model reached production,
+                                catching four fairness violations during development that would have violated RBI banking
+                                compliance guidelines.</li>
                             <li>Engineered an event-driven fraud detection pipeline using Apache Kafka, processing 2.3M
-                                transactions daily with sub-100ms latency and reducing fraud leakage by 18%.</li>
-                            <li>Established a behavioral testing framework for ML models using property-based and
-                                adversarial input generation, reducing production model errors by 41% and cutting
-                                emergency hotfix deployments from 8 to 1 per quarter.</li>
+                                transactions daily with sub-100ms latency, enabling real-time risk scoring integration
+                                into onboarding and account workflows and reducing fraud leakage by 18%.</li>
+                            <li>Implemented end-to-end identity propagation using OAuth 2.0 with short-lived JWT tokens
+                                and dynamic scope restriction across 14 microservices, eliminating lateral-movement risk
+                                identified in threat-model review and achieving zero privilege-escalation findings across
+                                two consecutive security audits.</li>
+                            <li>Established a behavioral testing framework for ML models using property-based testing and
+                                adversarial input generation, uncovering edge-case failures in fraud detection logic that
+                                standard unit tests missed — reducing production model errors by 41% and cutting emergency
+                                hotfix deployments from 8 to 1 per quarter.</li>
                         </ul>
-                        <p class="exp-environment"><strong>Environment:</strong> Python, Java, XGBoost, Random Forest,
-                            BERT, CNNs, NLP, PostgreSQL, Apache Kafka, Docker, Databricks, OAuth 2.0/JWT, CI/CD.</p>
                     </div>
                 </div>
             </div>
