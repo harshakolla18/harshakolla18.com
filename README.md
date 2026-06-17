@@ -26,7 +26,7 @@ A clean, responsive personal portfolio for showcasing experience, projects, and 
 ├── style.css           # Styles (design tokens + sections)
 ├── app.js              # Interactions (nav, scroll, forms, effects)
 ├── harsha-kolla-optimized.jpg          # Profile image
-├── Reddy_Harsha_Vardhan_Resume.docx    # Downloadable resume
+├── Harsha-Vardhan-Reddy-Resume.docx    # Downloadable resume
 └── .gitignore
 ```
 
@@ -50,7 +50,7 @@ python3 -m http.server 8000
 
 ## Customize
 - Content: edit section text and links in `index.html` (name, roles, experience, projects, contact links)
-- Resume: replace `Reddy_Harsha_Vardhan_Resume.docx` and update links if you rename it
+- Resume: replace `Harsha-Vardhan-Reddy-Resume.docx` and update links if you rename it
 - Images: swap `harsha-kolla.jpg` with your photo (keep the same filename or update the `<img>` src)
 - Colors and design: adjust CSS variables in `style.css` (see `:root` tokens)
 - Sections:
